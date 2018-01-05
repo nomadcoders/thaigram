@@ -9,3 +9,51 @@
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 3px;
 }
+
+.explore__user-list .explore__user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.explore__user-list .explore__column {
+  display: flex;
+  align-items: center;
+}
+
+.explore__column .explore__avatar {
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.explore__info .explore__username {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.explore__info .explore__full-name {
+  color: #999;
+}
+
+.explore__column .explore__btn {
+  background: #3e99ed;
+  border: 0;
+  color: white;
+  font-weight: 600;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.explore__column .explore__btn:active,
+.explore__column .explore__btn:focus {
+  outline: none;
+}
+
+.explore__column .explore__btn:active {
+  opacity: 0.9;
+}

@@ -25,3 +25,18 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+
+@keyframes prettyEnter {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+main {
+  animation: prettyEnter 0.4s ease-out;
+}

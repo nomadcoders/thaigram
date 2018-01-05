@@ -1,0 +1,38 @@
+@media screen and (min-width: 300px) and (max-width: 736px) {
+  .login {
+    margin-top: 0;
+  }
+  .login .login__column:first-child {
+    display: none;
+  }
+  .login .login__column {
+    width: 100%;
+  }
+  .login__column .login__white-box {
+    background-color: transparent;
+    border: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer .footer__navigation {
+    width: 90%;
+  }
+  .footer .footer__list {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .footer__list .footer__list-item {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  .header {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .header .header__input {
+    display: none;
+  }
+}

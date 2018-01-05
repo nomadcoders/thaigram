@@ -21,10 +21,29 @@
   align-items: center;
 }
 
+@keyframes flipIt {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .photo__header .photo__avatar {
   width: 40px;
   border-radius: 50%;
   margin-right: 15px;
+  animation: flipIt 0.5s linear infinite;
 }
 
 .photo__info .photo__owner {

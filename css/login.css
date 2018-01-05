@@ -1,7 +1,8 @@
 .login {
   margin-top: 50px;
   display: flex;
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }

@@ -31,8 +31,23 @@
   .header {
     padding-right: 40px;
     padding-left: 40px;
+    margin-bottom: 10px;
   }
   .header .header__input {
     display: none;
+  }
+  .photo {
+    border: 0;
+    background: transparent;
+    margin-bottom: 5px;
+  }
+  .photo .photo__make-comment {
+    display: none;
+  }
+  .explore .explore__user-list {
+    border: 0;
+  }
+  .explore__user-list .explore__user {
+    border-bottom: 0;
   }
 }

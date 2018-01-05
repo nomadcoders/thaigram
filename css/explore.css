@@ -15,6 +15,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.explore__user-list .explore__user:last-child {
+  border: 0;
 }
 
 .explore__user-list .explore__column {

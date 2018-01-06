@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, Comment
+from .models import Image, Comment, Like
 
 
 @admin.register(Image)
@@ -29,4 +29,9 @@ class AdminImage(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Like)
+class LikeAdmin(admin.ModelAdmin):
     pass

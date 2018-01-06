@@ -21,3 +21,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'{self.message} - {self.directed_to.location}'
+
+
+class Like(models.Model):
+
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    liked_image = models.ForeignKey(Image, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.created_by.username} - {self.liked_image.location}'

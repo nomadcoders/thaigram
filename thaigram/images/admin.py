@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image
+from .models import Image, Comment
 
 
 @admin.register(Image)
@@ -9,7 +9,8 @@ class AdminImage(admin.ModelAdmin):
         'caption',
         'location',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'author'
     )
 
     list_filter = (
@@ -26,3 +27,6 @@ class AdminImage(admin.ModelAdmin):
     )
 
 
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass

@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Comment, Image, Like
 
 # Create your views here.
-def index_view(request):
-    if request.method == "GET":
-        if request.user.is_authenticated:
-            return HttpResponse(f'Your email is {request.user.email}')
+def index_view(potato):
+    if potato.method == "GET":
+        if potato.user.is_authenticated:
+            user = potato.user
+            return render(potato, 'feed.html')
         else:
-            return HttpResponse('Please log in.')
+            return render(potato, 'login.html')

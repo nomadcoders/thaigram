@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +12,12 @@
     <main class="login">
         <!-- Phone image -->
         <div class="login__column">
-            <img src="images/phoneImage.png" />
+            <img src="{% static 'images/phoneImage.png' %}" />
         </div>
         <!-- Boxes  -->
         <div class="login__column">
             <div class="login__white-box">
-                <img src="images/logo.png" class="login__logo" />
+                <img src="{%static 'images/logo.png' %}" class="login__logo" />
                 <form action="feed.html" method="get" class="login__form">
                     <input class="login__input" name="username" type="text" accept="" placeholder="Username" required />
                     <input class="login__input" name="password" type="password" placeholder="Password" required />
@@ -35,10 +36,10 @@
                 <span>Get the app.</span>
                 <div class="login__app-stores">
                     <a class="login__app-store" target="_blank " href="https://itunes.apple.com/app/instagram/id389801252 ">
-                        <img src="images/ios.png">
+                        <img src="{% static 'images/ios.png' %}">
                     </a>
                     <a class="login__app-store" target="_blank " href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26utm_medium%3Dbadge ">
-                        <img src="images/android.png">
+                        <img src="{% static 'images/android.png' %}">
                     </a>
                 </div>
             </div>

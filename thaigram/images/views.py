@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from .models import Image
+from django.views.decorators.csrf import csrf_exempt
 
 """
 Create URL
@@ -48,3 +49,26 @@ def explore_view(request):
     8) Update the html and do a for user in all_users
     """
     return HttpResponse('this is explore')
+
+
+def profile_view(request):
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            return render(request, 'profile.html', context={'user': request.user})
+        else:
+            return render(request, 'login.html')
+
+
+@csrf_exempt
+def upload(request):
+    if request.method == "POST":
+        description = request.POST.get('description')
+        file = request.FILES.get('photo')
+        location = request.POST.get('location')
+        Image.objects.create(
+            file=file,
+            caption=description,
+            location=location,
+            author=request.user
+        )
+    return render(request, 'profile.html', context={'user': request.user})

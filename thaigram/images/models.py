@@ -17,6 +17,9 @@ class Image(models.Model):
     def count_likes(self):
         return self.like_set.all().count()
 
+    def count_comments(self):
+        return self.comment_set.all().count()
+
 
     class Meta:
         ordering = ("-created_at",)

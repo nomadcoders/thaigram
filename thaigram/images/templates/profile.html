@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% load static %} {%block potato%}Profile{%endblock%} {% block content %}
+
+
+<main class="profile">
+
+    <header class="profile__header">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" accept=".jpg" name="photo" required>
+            <input type="text" name="description" required>
+            <input type="text" name="location" required>
+            <input type="submit">
+        </form>
+    </header>
+
+
+    <div class="profile__photos">
+
+        {% for image in user.image_set.all %}
+
+
+        <div class="profile__uploaded">
+
+            <img src="/media/{{image.file}}">
+
+            <div class="uploaded__data">
+                <span>likes: {{image.count_likes}}</span>
+                <span>comment : {{image.count_comments}}</span>
+            </div>
+
+
+        </div>
+
+
+
+        {% endfor %}
+
+    </div>
+
+
+</main>
+
+
+{% endblock %}

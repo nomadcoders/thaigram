@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Image(models.Model):
 
     file = models.FileField()
@@ -8,10 +9,17 @@ class Image(models.Model):
     location = models.CharField(max_length=50, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    def count_likes(self):
+        return self.like_set.all().count()
 
     def __str__(self):
         return f'{self.caption} - {self.location}'
+
+    class Meta:
+        ordering = ("-created_at",)
+
 
 class Comment(models.Model):
 
@@ -22,6 +30,9 @@ class Comment(models.Model):
     def __str__(self):
         return f'{self.message} - {self.directed_to.location}'
 
+    class Meta:
+        ordering = ("-id",)
+
 
 class Like(models.Model):
 
@@ -30,3 +41,6 @@ class Like(models.Model):
 
     def __str__(self):
         return f'{self.created_by.username} - {self.liked_image.location}'
+
+    class Meta:
+        ordering = ("-id",)

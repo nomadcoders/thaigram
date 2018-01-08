@@ -4,6 +4,25 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from .models import Image
 
+"""
+Create URL
+Create View
+Create template (BS) & Render
+Add URL
+Grab the data.
+Render real data (
+    user profile.
+    image_set
+    per image:
+        like count
+        comment count
+)
+HTML
+Drop CSS.
+Media querys + responsive
+
+"""
+
 # Create your views here.
 
 

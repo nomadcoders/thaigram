@@ -11,11 +11,12 @@ class Image(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
+    def __str__(self):
+        return f'{self.caption} - {self.location}'
+    
     def count_likes(self):
         return self.like_set.all().count()
 
-    def __str__(self):
-        return f'{self.caption} - {self.location}'
 
     class Meta:
         ordering = ("-created_at",)
